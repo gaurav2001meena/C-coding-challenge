@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,14 +20,14 @@ namespace OrderManagement
 
             do
             {
-                Console.WriteLine("1.Create User.......");
-                Console.WriteLine("2.Create Product.......");
-                Console.WriteLine("3.Create Order.......");
-                Console.WriteLine("4.Cancel Order.......");
-                Console.WriteLine("5.get all products.......");
-                Console.WriteLine("6.get order by user.......");
+                Console.WriteLine("1.Create User");
+                Console.WriteLine("2.Create Product");
+                Console.WriteLine("3.Create Order");
+                Console.WriteLine("4.Cancel Order");
+                Console.WriteLine("5.get all products");
+                Console.WriteLine("6.get order by user");
 
-                Console.WriteLine("7.Exit........\n");
+                Console.WriteLine("7.Exit\n");
                 ch = Convert.ToInt32(Console.ReadLine());
 
                 switch (ch)
@@ -122,7 +122,7 @@ namespace OrderManagement
 
                     Console.WriteLine("Enter user id");
                     user2.UserId = Convert.ToInt32(Console.ReadLine());
-                    //checking user exist
+                    
                     bool ress = OrderProcessor.checkUserExist(user2.UserId);
                     if (ress)
                     {
@@ -161,19 +161,19 @@ namespace OrderManagement
                     User user1 = new User();
                     Product product = new Product();
 
-                    Console.Write("Enter user id::");
+                    Console.Write("Enter user id:");
                     user1.UserId = Convert.ToInt32(Console.ReadLine());
 
-                    Console.Write("Enter Product name::");
+                    Console.Write("Enter Product name:");
                     product.Product_name = Console.ReadLine();
 
-                    Console.Write("Enter Product description::");
+                    Console.Write("Enter Product description:");
                     product.Description = Console.ReadLine();
 
-                    Console.Write("Enter Product price::");
+                    Console.Write("Enter Product price:");
                     product.Price = Convert.ToDecimal(Console.ReadLine());
 
-                    Console.Write("Enter stock::");
+                    Console.Write("Enter stock:");
                     product.Quantity_in_stock = Convert.ToInt32(Console.ReadLine());
 
                     Console.Write("Enter Product type::");
@@ -196,9 +196,9 @@ namespace OrderManagement
             {
                 try
                 {
-                    Console.Write("Enter user ID::");
+                    Console.Write("Enter user ID:");
                     int userid = Convert.ToInt32(Console.ReadLine());
-                    Console.Write("Enter orderid ::");
+                    Console.Write("Enter orderid:");
                     int orderid = Convert.ToInt32(Console.ReadLine());
 
 
