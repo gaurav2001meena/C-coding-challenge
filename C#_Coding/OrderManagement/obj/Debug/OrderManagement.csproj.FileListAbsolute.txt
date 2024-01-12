@@ -1,0 +1,11 @@
+C:\Users\asus\OneDrive\Desktop\C#\Codingggggg-master\OrderManagement\bin\Debug\OrderManagement.exe.config
+C:\Users\asus\OneDrive\Desktop\C#\Codingggggg-master\OrderManagement\bin\Debug\OrderManagement.exe
+C:\Users\asus\OneDrive\Desktop\C#\Codingggggg-master\OrderManagement\bin\Debug\OrderManagement.pdb
+C:\Users\asus\OneDrive\Desktop\C#\Codingggggg-master\OrderManagement\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Users\asus\OneDrive\Desktop\C#\Codingggggg-master\OrderManagement\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Users\asus\OneDrive\Desktop\C#\Codingggggg-master\OrderManagement\obj\Debug\OrderManagement.csproj.AssemblyReference.cache
+C:\Users\asus\OneDrive\Desktop\C#\Codingggggg-master\OrderManagement\obj\Debug\OrderManagement.csproj.SuggestedBindingRedirects.cache
+C:\Users\asus\OneDrive\Desktop\C#\Codingggggg-master\OrderManagement\obj\Debug\OrderManagement.csproj.CoreCompileInputs.cache
+C:\Users\asus\OneDrive\Desktop\C#\Codingggggg-master\OrderManagement\obj\Debug\OrderManagement.csproj.CopyComplete
+C:\Users\asus\OneDrive\Desktop\C#\Codingggggg-master\OrderManagement\obj\Debug\OrderManagement.exe
+C:\Users\asus\OneDrive\Desktop\C#\Codingggggg-master\OrderManagement\obj\Debug\OrderManagement.pdb
