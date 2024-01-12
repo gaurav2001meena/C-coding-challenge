@@ -1,4 +1,4 @@
-﻿using OrderManagement.Entity;
+using OrderManagement.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,19 +37,20 @@ namespace OrderManagement.DAO
                     }
                     else 
                     { 
+                        Console.WriteLine("Failed to cancel order. Please try again.");
                         return false; 
                     }
                 }
                 else if(che==false)
                 {
                     
-                    throw new UserNotFoundException("No user id found");
+                    throw new UserNotFoundException("User not found. Cannot cancel order.");
                     
                     
                 }
                 else 
                 {
-                    throw new OrderNotFoundException("orderid id not found");
+                    throw new OrderNotFoundException("Order not found. Cannot cancel order.");
                 }
             }
             catch(Exception e)
@@ -80,7 +81,7 @@ namespace OrderManagement.DAO
                 int rowcount = cmd.ExecuteNonQuery();
                 cmd.CommandText = "select SCOPE_IDENTITY();";
                 object NewId = cmd.ExecuteScalar();
-                Console.WriteLine($"your order id{NewId}");
+                Console.WriteLine($"your order id is {NewId}");
 
 
 
@@ -88,7 +89,9 @@ namespace OrderManagement.DAO
                 {
                     return true;
                 }
-                else { return false; }
+                else { 
+                    Console.WriteLine("Failed to create order. Please try again.");
+                    return false; }
             }
             catch (Exception e)
             {
@@ -115,6 +118,9 @@ namespace OrderManagement.DAO
                     conn.Open();
 
                     int rowcount = cmd.ExecuteNonQuery();
+                    cmd.CommandText = "select SCOPE_IDENTITY();";
+                    object NewId = cmd.ExecuteScalar();
+                    Console.WriteLine($"your Product id is {NewId}");
                     if (rowcount > 0)
                     {
                         return true;
@@ -123,7 +129,7 @@ namespace OrderManagement.DAO
                 }
                 else
                 {
-                    throw new Exception("admin not found");
+                    throw new Exception("user is not admin ");
                 }
             }
             catch (Exception e)
@@ -146,6 +152,9 @@ namespace OrderManagement.DAO
                 conn.Open();
 
                 int rowcount = cmd.ExecuteNonQuery();
+                cmd.CommandText = "select SCOPE_IDENTITY();";
+                object NewId = cmd.ExecuteScalar();
+                Console.WriteLine($"your User id is {NewId}");
                 if (rowcount > 0)
                 {
                     return true;
