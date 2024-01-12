@@ -12,7 +12,7 @@ namespace OrderManagement
     {
         static void Main(string[] args)
         {
-            int flag = 1, ch;
+            int flag = 1, userChoice;
             Boolean res;
 
             OrderProcessor orderProcessor = new OrderProcessor();
@@ -20,61 +20,40 @@ namespace OrderManagement
 
             do
             {
-                Console.WriteLine("1.Create User");
-                Console.WriteLine("2.Create Product");
-                Console.WriteLine("3.Create Order");
-                Console.WriteLine("4.Cancel Order");
-                Console.WriteLine("5.get all products");
-                Console.WriteLine("6.get order by user");
+                Console.WriteLine("1. Create New User");
+                Console.WriteLine("2. Add New Product");
+                Console.WriteLine("3. Place New Order");
+                Console.WriteLine("4. Cancel Existing Order");
+                Console.WriteLine("5. View All Available Products");
+                Console.WriteLine("6. View Orders by User");
+                Console.WriteLine("7. Exit\n");
+                userChoice  = Convert.ToInt32(Console.ReadLine());
 
-                Console.WriteLine("7.Exit\n");
-                ch = Convert.ToInt32(Console.ReadLine());
-
-                switch (ch)
+                switch (userChoice)
                 {
                     case 1:createuser();
-                        
                         break;
-
                     case 2:
                         createproduct();
-                        
                         break;
-
-
                     case 3:
-
-
                         createorder();
-                        
-
                         break;
                     case 4:
                         cancelorder();
-
                         break;
-
-
                     case 5:
-                        getallproduct();
-                        
+                        getallproduct();     
                         break;
-
                     case 6:
-
-
                         getorderbyuser();
-
                         break;
-
-
-
                     case 7:
                         flag = 0;
                         break;
 
                     default:
-                        Console.WriteLine("Invalid input.....");
+                        Console.WriteLine("Invalid input please try again");
                         break;
                 }
 
@@ -89,19 +68,19 @@ namespace OrderManagement
                 {
                     User user = new User();
 
-                    Console.Write("Enter user Name::");
+                    Console.Write("Enter user Name:");
                     user.Username = Console.ReadLine();
 
-                    Console.Write("Enter User password::");
+                    Console.Write("Enter User password:");
                     user.Password = Console.ReadLine();
 
-                    Console.Write("Enter User Role::");
+                    Console.Write("Enter User Role:");
                     user.Role = Console.ReadLine();
 
                     res = orderProcessor.CreateUser(user);
                     if (res)
                     {
-                        Console.WriteLine("succefully inserted\n\n");
+                        Console.WriteLine("User created successfully. \n\n");
                     }
                 }
                 catch (Exception e)
@@ -136,7 +115,7 @@ namespace OrderManagement
                         res = orderProcessor.CreateOrder(user2, list2, quantity);
                         if (res)
                         {
-                            Console.WriteLine("succefully inserted");
+                            Console.WriteLine("Order placed successfully");
                         };
                     }
                     else
@@ -176,13 +155,13 @@ namespace OrderManagement
                     Console.Write("Enter stock:");
                     product.Quantity_in_stock = Convert.ToInt32(Console.ReadLine());
 
-                    Console.Write("Enter Product type::");
+                    Console.Write("Enter Product type:");
                     product.Type = Console.ReadLine();
 
                     res = orderProcessor.CreateProduct(user1, product);
                     if (res)
                     {
-                        Console.WriteLine("succefully inserted");
+                        Console.WriteLine("Product added successfully");
                     }
                 }
                 catch (Exception e)
@@ -205,7 +184,7 @@ namespace OrderManagement
                     res = orderProcessor.CancelOrder(userid, orderid);
                     if (res)
                     {
-                        Console.WriteLine("succefully deleted");
+                        Console.WriteLine("Order canceled successfully");
                     }
                 }
                 catch (Exception e)
@@ -224,7 +203,7 @@ namespace OrderManagement
                     List<Product> list1 = orderProcessor.GetAllProducts();
                     foreach (Product p in list1)
                     {
-                        Console.WriteLine($"\nproductid={p.Product_id}\tprice={p.Price} \tname={p.Product_name}\t description={p.Description}\t stock= {p.Quantity_in_stock}\t type={p.Type}\n");
+                        Console.WriteLine($"productid={p.Product_id} price={p.Price} name={p.Product_name} description={p.Description} stock= {p.Quantity_in_stock} type={p.Type}\n");
                     }
                 }
                 catch (Exception e)
@@ -241,7 +220,7 @@ namespace OrderManagement
                     List<Tuple<Product, int>> tuples = orderProcessor.GetOrderByUser();
                     foreach (Tuple<Product, int> tuple in tuples)
                     {
-                        Console.WriteLine($"Product_ID={tuple.Item1.Product_id} \tProduct Name={tuple.Item1.Product_name} \t Quantity={tuple.Item2}");
+                        Console.WriteLine($"Product_ID={tuple.Item1.Product_id} Product Name={tuple.Item1.Product_name}  Quantity={tuple.Item2}");
                     }
                 }
                 catch (Exception e)
