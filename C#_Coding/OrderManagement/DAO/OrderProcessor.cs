@@ -222,7 +222,7 @@ namespace OrderManagement.DAO
                 SqlDataReader dr = cmd.ExecuteReader();
 
 
-                if (dr.HasRows)
+                if (dr != null && dr.HasRows)
                 {
                     while (dr.Read())
                     {
@@ -247,7 +247,7 @@ namespace OrderManagement.DAO
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
-                return null;
+                return new List<Tuple<Product, int>>();
             }
         }
 
